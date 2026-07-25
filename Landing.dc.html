@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: #F6F5F2; color: #111; -webkit-font-smoothing: antialiased; }
+  a { color: #E8600A; }
+  a:hover { color: #c94f00; }
+  * { box-sizing: border-box; }
+  input[type=range].sim-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 6px; background: #E8E5DF; border-radius: 999px; outline: none; }
+  input[type=range].sim-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 26px; height: 26px; border-radius: 50%; background: #E8600A; cursor: pointer; border: 4px solid white; box-shadow: 0 2px 8px rgba(232,96,10,0.4); }
+  input[type=range].sim-slider::-moz-range-thumb { width: 26px; height: 26px; border-radius: 50%; background: #E8600A; cursor: pointer; border: 4px solid white; box-shadow: 0 2px 8px rgba(232,96,10,0.4); }
+</style>
+</helmet>
+
+<div style="background: #F6F5F2; color: #111; min-height: 100vh; overflow-x: hidden;">
+
+  <!-- NAV -->
+  <nav style="display: flex; align-items: center; justify-content: flex-end; padding: 22px 48px; max-width: 1400px; margin: 0 auto;">
+    <div style="display: flex; align-items: center; gap: 32px; font-size: 14px; color: #555;">
+      <a href="#como-funciona" style="text-decoration: none; color: #555;">Como funciona</a>
+      <a href="#ganhos" style="text-decoration: none; color: #555;">Ganhos</a>
+      <a href="#gravar" style="text-decoration: none; color: #555;">Como gravar</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section style="position: relative; padding: 60px 48px 100px; max-width: 1400px; margin: 0 auto;">
+    <div aria-hidden="true" style="position: absolute; inset: -40px 0 0 0; display: flex; justify-content: center; pointer-events: none; z-index: 0;">
+      <div style="width: 900px; height: 900px; border-radius: 50%; background: radial-gradient(circle at center, rgba(232,96,10,0.08) 0%, rgba(232,96,10,0.03) 40%, transparent 70%); filter: blur(2px);"></div>
+    </div>
+    <div aria-hidden="true" style="position: absolute; inset: 0; background-image: radial-gradient(rgba(232,96,10,0.18) 1px, transparent 1.2px); background-size: 14px 14px; mask-image: radial-gradient(circle at 50% 40%, black 0%, black 30%, transparent 60%); -webkit-mask-image: radial-gradient(circle at 50% 40%, black 0%, black 30%, transparent 60%); z-index: 0;"></div>
+
+    <div style="position: relative; z-index: 1; text-align: center; max-width: 960px; margin: 0 auto;">
+      <div style="display: inline-flex; align-items: center; gap: 10px; background: white; border: 1px solid #F0E6DA; padding: 8px 16px; border-radius: 999px; font-size: 13px; color: #b91c1c; font-weight: 600; margin-bottom: 32px;">
+        <span style="width: 8px; height: 8px; border-radius: 50%; background: #dc2626; box-shadow: 0 0 0 4px rgba(220,38,38,0.15);"></span>
+        <span>Prazo desta rodada: <strong>segunda-feira, 22h</strong></span>
+      </div>
+      <h1 style="font-size: 60px; line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin: 0 0 24px;">
+        Estamos formando um time de treinadores de IA. Grave vídeos de tarefas domésticas e ganhe <span style="color: #E8600A;">$7 dólares por hora</span> aprovada.
+      </h1>
+      <p style="font-size: 20px; line-height: 1.5; color: #555; max-width: 680px; margin: 0 auto 40px;">
+        Você ajuda a treinar modelos de inteligência artificial gravando o seu dia a dia em casa, em primeira pessoa, com o celular.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin: 48px 0; text-align: left;">
+        <div style="background: white; border-radius: 20px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">PASSO 1</div>
+          <div style="font-weight: 600; margin-bottom: 16px;">Crie sua conta no app.</div>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 10px; background: #FFF3EA; border-radius: 12px; padding: 10px 12px; font-size: 13px;">
+              <span style="width: 16px; height: 16px; border-radius: 5px; background: #E8600A; color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 11px;">✓</span>
+              Cadastro em app.inventmoney.com
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; background: #FFF3EA; border-radius: 12px; padding: 10px 12px; font-size: 13px;">
+              <span style="width: 16px; height: 16px; border-radius: 5px; background: #E8600A; color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 11px;">✓</span>
+              Grátis, sem taxa
+            </div>
+            <div style="display: flex; align-items: center; gap: 10px; background: #F3F1EC; border-radius: 12px; padding: 10px 12px; font-size: 13px; color: #777;">
+              <span style="width: 16px; height: 16px; border-radius: 5px; border: 1.5px solid #ccc; display: inline-block;"></span>
+              Confirme seu WhatsApp
+            </div>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 20px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">PASSO 2</div>
+          <div style="font-weight: 600; margin-bottom: 16px;">Grave sua tarefa.</div>
+          <div style="background: #FFF3EA; border-radius: 14px; padding: 18px; text-align: center;">
+            <div style="display: inline-block; background: #FFE0C7; color: #E8600A; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 999px; margin-bottom: 10px;">Tarefa doméstica</div>
+            <div style="font-size: 44px; font-weight: 800; color: #E8600A; letter-spacing: -0.03em; line-height: 1;">$7<span style="font-size: 18px; color: #E8600A; font-weight: 600;"> /hora</span></div>
+            <div style="margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; background: #E7F6EC; color: #157a3a; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;">✓ Pago em USDC</div>
+          </div>
+        </div>
+
+        <div style="background: white; border-radius: 20px; padding: 22px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);">
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">PASSO 3</div>
+          <div style="font-weight: 600; margin-bottom: 16px;">Receba o pagamento.</div>
+          <div style="background: #FFF3EA; border-radius: 14px; padding: 18px; text-align: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #888; letter-spacing: 0.15em; margin-bottom: 6px;">SEU SALDO</div>
+            <div style="font-size: 34px; font-weight: 800; color: #E8600A; letter-spacing: -0.03em; line-height: 1;">$125,00 USDC</div>
+            <div style="margin-top: 10px; display: inline-flex; align-items: center; gap: 6px; background: #E7F6EC; color: #157a3a; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600;">↑ Bônus de 10h liberado</div>
+            <div style="margin-top: 8px; font-size: 11px; color: #888;">USDC na sua conta nido.global</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section id="como-funciona" style="padding: 100px 48px; max-width: 1400px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start;">
+      <div style="position: sticky; top: 40px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8600A; letter-spacing: 0.2em; margin-bottom: 16px;">— COMO FUNCIONA</div>
+        <h2 style="font-size: 48px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 20px;">
+          Quatro passos.<br>Nenhum mistério.
+        </h2>
+        <p style="font-size: 17px; line-height: 1.55; color: #555; margin: 0;">
+          Você não precisa saber nada de tecnologia. Se sabe abrir o WhatsApp, sabe fazer isso.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px;">
+        <sc-for list="{{ steps }}" as="step" hint-placeholder-count="4">
+          <div style="display: flex; gap: 24px; background: white; border-radius: 20px; padding: 28px; align-items: flex-start; box-shadow: 0 1px 3px rgba(0,0,0,0.03), 0 8px 20px rgba(0,0,0,0.03);">
+            <div style="flex-shrink: 0; width: 56px; height: 56px; border-radius: 16px; background: #FFF3EA; display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-size: 22px; font-weight: 700; color: #E8600A;">
+              {{ step.num }}
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 6px;">
+                <span style="font-size: 22px;">{{ step.icon }}</span>
+                <h3 style="font-size: 22px; font-weight: 700; margin: 0; letter-spacing: -0.01em;">{{ step.title }}</h3>
+              </div>
+              <p style="font-size: 15px; line-height: 1.55; color: #666; margin: 0;">{{ step.desc }}</p>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUANTO VOCÊ GANHA -->
+  <section id="ganhos" style="padding: 20px 48px 60px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: #111; border-radius: 32px; padding: 64px 56px; color: white; position: relative; overflow: hidden;">
+      <div aria-hidden="true" style="position: absolute; inset: 0; background-image: radial-gradient(rgba(232,96,10,0.35) 1px, transparent 1.2px); background-size: 18px 18px; opacity: 0.4; mask-image: radial-gradient(circle at 80% 50%, black, transparent 60%); -webkit-mask-image: radial-gradient(circle at 80% 50%, black, transparent 60%);"></div>
+      <div style="position: relative;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8600A; letter-spacing: 0.2em; margin-bottom: 16px;">— QUANTO VOCÊ GANHA</div>
+        <h2 style="font-size: 52px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 12px; max-width: 700px;">
+          Pagamento por hora <span style="color: #E8600A;">+ bônus em USDC</span> por volume.
+        </h2>
+        <p style="font-size: 17px; color: #aaa; margin: 0 0 48px; max-width: 620px;">Aprovada = a hora foi enviada dentro das regras. Se estiver certo, entra na sua conta.</p>
+
+        <div style="display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 16px;">
+          <div style="background: #E8600A; border-radius: 24px; padding: 32px; color: white;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; opacity: 0.85; margin-bottom: 12px;">BASE</div>
+            <div style="font-size: 68px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">$7</div>
+            <div style="font-size: 16px; opacity: 0.9; margin-top: 6px;">por hora aprovada</div>
+            <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.25); font-size: 13px; opacity: 0.95;">Pagamento em USDC — crie sua conta grátis em nido.global para receber.</div>
+          </div>
+
+          <div style="background: #1c1c1c; border-radius: 24px; padding: 32px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #888; margin-bottom: 12px;">BÔNUS 1H</div>
+            <div style="font-size: 46px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #E8600A;">+$5</div>
+            <div style="font-size: 14px; color: #aaa; margin-top: 12px;">Ao completar a primeira hora aprovada.</div>
+          </div>
+
+          <div style="background: #1c1c1c; border-radius: 24px; padding: 32px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #888; margin-bottom: 12px;">BÔNUS 5H</div>
+            <div style="font-size: 46px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #E8600A;">+$15</div>
+            <div style="font-size: 14px; color: #aaa; margin-top: 12px;">Somando 5 horas aprovadas no total.</div>
+          </div>
+
+          <div style="background: #1c1c1c; border-radius: 24px; padding: 32px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #888; margin-bottom: 12px;">BÔNUS 10H</div>
+            <div style="font-size: 46px; font-weight: 800; letter-spacing: -0.03em; line-height: 1; color: #E8600A;">+$35</div>
+            <div style="font-size: 14px; color: #aaa; margin-top: 12px;">Ao chegar em 10 horas aprovadas.</div>
+          </div>
+        </div>
+
+        <!-- Meta coletiva + prazo -->
+        <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div style="background: #1c1c1c; border-radius: 24px; padding: 28px 32px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #888; margin-bottom: 10px;">META COLETIVA DO GRUPO</div>
+            <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">120 horas nesta rodada</div>
+            <div style="margin-top: 12px; font-size: 14px; color: #aaa;">Quando o grupo bate a meta, todo mundo recebe mais rápido.</div>
+          </div>
+          <div style="background: #1c1c1c; border: 1px solid rgba(232,96,10,0.4); border-radius: 24px; padding: 28px 32px;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #E8600A; margin-bottom: 10px;">⏰ PRAZO DE ENVIO</div>
+            <div style="font-size: 30px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.1;">Até segunda-feira, 22h</div>
+            <div style="margin-top: 12px; font-size: 14px; color: #aaa;">Depois desse horário, os vídeos entram na próxima rodada.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR DE GANHOS -->
+  <section style="padding: 40px 48px 100px; max-width: 1400px; margin: 0 auto;">
+    <div style="background: white; border-radius: 32px; padding: 56px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.04);">
+      <div style="max-width: 720px; margin-bottom: 40px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8600A; letter-spacing: 0.2em; margin-bottom: 16px;">— ESTIMATIVA</div>
+        <h2 style="font-size: 44px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 16px;">Quanto você pode ganhar?</h2>
+        <p style="font-size: 17px; color: #666; margin: 0;">Você ganha pelas horas que grava e pelos bônus quando bate marcos. Arraste para estimar.</p>
+      </div>
+
+      <div style="background: #F6F5F2; border-radius: 24px; padding: 36px;">
+        <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px;">
+          <div style="font-size: 17px; font-weight: 600; color: #333;">Horas que você grava nesta rodada</div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 800; color: #E8600A; letter-spacing: -0.02em;">{{ simHours }}h</div>
+        </div>
+
+        <input type="range" min="0" max="15" step="1" value="{{ simHours }}" onChange="{{ onChangeHours }}" onInput="{{ onChangeHours }}" class="sim-slider">
+
+        <div style="display: flex; justify-content: space-between; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #888;">
+          <span>0h</span>
+          <span>5h</span>
+          <span>10h</span>
+          <span>15h</span>
+        </div>
+
+        <div style="margin-top: 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <!-- Breakdown -->
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #888; margin-bottom: 14px;">SEU GANHO</div>
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed #E5E1D8;">
+                <span style="font-size: 15px; color: #555;">Gravação · {{ simHours }}h × $7</span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600;">$ {{ simBase }}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed #E5E1D8;">
+                <span style="font-size: 15px; color: #555;">Bônus 1h <sc-if value="{{ has1 }}" hint-placeholder-val="{{ true }}"><span style="color: #16a34a; font-weight: 600; font-size: 12px;"> ✓ liberado</span></sc-if></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600; color: {{ has1Color }};">+ $ {{ simB1 }}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px dashed #E5E1D8;">
+                <span style="font-size: 15px; color: #555;">Bônus 5h <sc-if value="{{ has5 }}" hint-placeholder-val="{{ true }}"><span style="color: #16a34a; font-weight: 600; font-size: 12px;"> ✓ liberado</span></sc-if></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600; color: {{ has5Color }};">+ $ {{ simB5 }}</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
+                <span style="font-size: 15px; color: #555;">Bônus 10h <sc-if value="{{ has10 }}" hint-placeholder-val="{{ true }}"><span style="color: #16a34a; font-weight: 600; font-size: 12px;"> ✓ liberado</span></sc-if></span>
+                <span style="font-family: 'JetBrains Mono', monospace; font-size: 16px; font-weight: 600; color: {{ has10Color }};">+ $ {{ simB10 }}</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Total -->
+          <div style="background: #111; border-radius: 20px; padding: 28px; color: white; display: flex; flex-direction: column; justify-content: center;">
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #E8600A; margin-bottom: 10px;">TOTAL ESTIMADO</div>
+            <div style="font-size: 64px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">$ {{ simTotal }} <span style="font-size: 22px; color: #aaa;">USDC</span></div>
+            <div style="margin-top: 16px; font-size: 14px; color: #aaa;">{{ simNote }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMO GRAVAR CERTO -->
+  <section id="gravar" style="padding: 40px 48px 100px; max-width: 1400px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8600A; letter-spacing: 0.2em; margin-bottom: 16px;">— COMO GRAVAR CERTO</div>
+      <h2 style="font-size: 48px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0 0 16px;">
+        Três ajustes e você já está pronta.
+      </h2>
+      <p style="font-size: 17px; color: #666; margin: 0 auto; max-width: 620px;">A gravação precisa mostrar suas mãos em primeira pessoa, como se a câmera fossem os seus olhos.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+      <div style="background: white; border-radius: 24px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.04);">
+        <div style="height: 200px; background: #FFF3EA; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden;">
+          <svg viewBox="0 0 200 160" style="width: 80%; height: 80%;">
+            <circle cx="100" cy="90" r="42" fill="none" stroke="#E8600A" stroke-width="2.5"/>
+            <rect x="70" y="42" width="60" height="18" rx="4" fill="#111"/>
+            <circle cx="82" cy="51" r="3" fill="#E8600A"/>
+            <text x="100" y="54" text-anchor="middle" fill="white" font-size="8" font-family="JetBrains Mono">0.5x</text>
+            <path d="M 60 55 Q 100 30 140 55" stroke="#E8600A" stroke-width="2" fill="none" stroke-dasharray="3 3"/>
+            <text x="100" y="145" text-anchor="middle" fill="#E8600A" font-size="10" font-family="JetBrains Mono" font-weight="600">CELULAR NA TESTA</text>
+          </svg>
+        </div>
+        <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">01 · POSIÇÃO</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.01em;">Celular na testa, horizontal</h3>
+        <p style="font-size: 15px; line-height: 1.55; color: #666; margin: 0;">Prenda com uma faixa ou elástico bem na testa. Câmera virada para frente, na horizontal, lente 0.5x (grande angular).</p>
+      </div>
+
+      <div style="background: white; border-radius: 24px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.04);">
+        <div style="height: 200px; background: #FFF3EA; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg viewBox="0 0 200 160" style="width: 80%; height: 80%;">
+            <rect x="20" y="20" width="160" height="120" rx="10" fill="white" stroke="#E8600A" stroke-width="2"/>
+            <text x="30" y="36" fill="#E8600A" font-size="8" font-family="JetBrains Mono">REC ●</text>
+            <path d="M 40 140 Q 55 100 75 90 L 88 85 L 92 92 L 82 100 Q 78 120 88 140" fill="#FFE0C7" stroke="#E8600A" stroke-width="1.5"/>
+            <path d="M 160 140 Q 145 100 125 90 L 112 85 L 108 92 L 118 100 Q 122 120 112 140" fill="#FFE0C7" stroke="#E8600A" stroke-width="1.5"/>
+            <rect x="88" y="70" width="24" height="16" rx="3" fill="#111"/>
+            <text x="100" y="130" text-anchor="middle" fill="#E8600A" font-size="10" font-family="JetBrains Mono" font-weight="600">DUAS MÃOS</text>
+          </svg>
+        </div>
+        <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">02 · ENQUADRAMENTO</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.01em;">Duas mãos sempre visíveis</h3>
+        <p style="font-size: 15px; line-height: 1.55; color: #666; margin: 0;">A IA aprende com o movimento das suas mãos. Se elas saírem do quadro, aquele trecho não conta.</p>
+      </div>
+
+      <div style="background: white; border-radius: 24px; padding: 32px; box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 12px 30px rgba(0,0,0,0.04);">
+        <div style="height: 200px; background: #FFF3EA; border-radius: 16px; margin-bottom: 24px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
+          <svg viewBox="0 0 200 160" style="width: 80%; height: 80%;">
+            <circle cx="100" cy="80" r="50" fill="none" stroke="#E8600A" stroke-width="3"/>
+            <circle cx="100" cy="80" r="50" fill="none" stroke="#111" stroke-width="3" stroke-dasharray="180 400" transform="rotate(-90 100 80)"/>
+            <text x="100" y="88" text-anchor="middle" fill="#111" font-size="32" font-weight="800" font-family="Inter">10s</text>
+            <text x="100" y="150" text-anchor="middle" fill="#E8600A" font-size="10" font-family="JetBrains Mono" font-weight="600">TESTE ANTES</text>
+          </svg>
+        </div>
+        <div style="display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #E8600A; letter-spacing: 0.15em; margin-bottom: 8px;">03 · CONFIRA</div>
+        <h3 style="font-size: 22px; font-weight: 700; margin: 0 0 10px; letter-spacing: -0.01em;">Grave 10 segundos de teste</h3>
+        <p style="font-size: 15px; line-height: 1.55; color: #666; margin: 0;">Antes de começar a tarefa, faça um teste rápido. Se estiver enquadrado, siga em frente. Se não, ajuste.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERMITIDO x EVITAR -->
+  <section style="padding: 40px 48px 100px; max-width: 1400px; margin: 0 auto;">
+    <div style="text-align: center; margin-bottom: 60px;">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #E8600A; letter-spacing: 0.2em; margin-bottom: 16px;">— O QUE VALE E O QUE NÃO VALE</div>
+      <h2 style="font-size: 48px; line-height: 1.05; letter-spacing: -0.025em; font-weight: 800; margin: 0;">Regras simples, sem letra miúda.</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+      <div style="background: white; border: 2px solid #E7F6EC; border-radius: 24px; padding: 36px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 44px; height: 44px; border-radius: 14px; background: #16a34a; color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800;">✓</div>
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #157a3a;">PODE GRAVAR</div>
+            <div style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">Tarefas da sua rotina</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ allowed }}" as="item" hint-placeholder-count="6">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #F4FBF6; border-radius: 12px; font-size: 15px;">
+              <span style="color: #16a34a; font-weight: 800;">✓</span>
+              <span>{{ item }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="background: white; border: 2px solid #FDECEC; border-radius: 24px; padding: 36px;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 24px;">
+          <div style="width: 44px; height: 44px; border-radius: 14px; background: #dc2626; color: white; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800;">✕</div>
+          <div>
+            <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; color: #b91c1c;">NÃO GRAVE</div>
+            <div style="font-size: 22px; font-weight: 700; letter-spacing: -0.01em;">Coisas que não contam</div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <sc-for list="{{ avoid }}" as="item" hint-placeholder-count="6">
+            <div style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; background: #FDF5F5; border-radius: 12px; font-size: 15px;">
+              <span style="color: #dc2626; font-weight: 800;">✕</span>
+              <span>{{ item }}</span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 24px; text-align: center; font-size: 14px; color: #888;">
+      Se ficar em dúvida se pode ou não gravar alguma coisa, pergunte no grupo antes.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 48px 60px; max-width: 1400px; margin: 0 auto; text-align: center; border-top: 1px solid #E8E5DF;">
+    <div style="font-size: 13px; color: #888;">© 2026 · Campanha de gravação doméstica · Pagamento em USDC via nido.global · Envio até segunda-feira, 22h</div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1400,&quot;height&quot;:900}}">
+class Component extends DCLogic {
+  state = { simHours: 6 };
+
+  renderVals() {
+    const h = this.state.simHours;
+    const base = h * 7;
+    const b1 = h >= 1 ? 5 : 0;
+    const b5 = h >= 5 ? 15 : 0;
+    const b10 = h >= 10 ? 35 : 0;
+    const total = base + b1 + b5 + b10;
+    const fmt = (n) => n.toLocaleString('pt-BR');
+
+    let note = 'Comece a gravar hoje mesmo — cada hora aprovada já entra na sua conta em USDC.';
+    if (h === 0) note = 'Arraste para simular quantas horas você quer gravar nesta rodada.';
+    else if (h < 5) note = `Faltam ${5 - h}h para você desbloquear o bônus de 5h (+$15).`;
+    else if (h < 10) note = `Faltam ${10 - h}h para você desbloquear o bônus de 10h (+$35).`;
+    else note = 'Você desbloqueou todos os bônus. É o teto do multiplicador.';
+
+    return {
+      simHours: h,
+      simBase: fmt(base),
+      simB1: fmt(b1),
+      simB5: fmt(b5),
+      simB10: fmt(b10),
+      simTotal: fmt(total),
+      has1: h >= 1,
+      has5: h >= 5,
+      has10: h >= 10,
+      has1Color: h >= 1 ? '#16a34a' : '#bbb',
+      has5Color: h >= 5 ? '#16a34a' : '#bbb',
+      has10Color: h >= 10 ? '#16a34a' : '#bbb',
+      simNote: note,
+      onChangeHours: (e) => this.setState({ simHours: parseInt(e.target.value, 10) }),
+      steps: [
+        { num: '01', icon: '📱', title: 'Crie sua conta no app', desc: 'Cadastre-se gratuitamente em app.inventmoney.com com seu WhatsApp em menos de 2 minutos. Sem taxa, sem cartão.' },
+        { num: '02', icon: '🎯', title: 'Escolha a campanha exclusiva', desc: 'Você entra pelo nosso grupo e vê as campanhas disponíveis pra tarefas domésticas — as que a gente organiza pra você.' },
+        { num: '03', icon: '🎥', title: 'Grave sua tarefa doméstica', desc: 'Com o celular na testa, grave lavando louça, dobrando roupa, cozinhando — o que estiver na sua rotina naquela hora.' },
+        { num: '04', icon: '💸', title: 'Envie e receba o pagamento', desc: 'Assim que sua hora for aprovada, o pagamento cai em USDC. Você precisa ter uma conta gratuita em nido.global para receber. Cada hora aprovada = $7.' },
+      ],
+      allowed: [
+        'Lavar louça, dobrar e estender roupa',
+        'Cozinhar refeições do dia a dia',
+        'Limpar cozinha, banheiro, área de serviço',
+        'Organizar cômodos, armários e gavetas',
+        'Pequenos reparos simples pela casa',
+        'Arrumar caixas, embalagens, mudanças pequenas',
+      ],
+      avoid: [
+        'Encenar ou fingir tarefas que você não faz',
+        'Ficar parada, mexer no celular, esperar',
+        'Dirigir ou gravar dentro do carro em movimento',
+        'Mostrar outras pessoas ou crianças no vídeo',
+        'Mostrar documentos, senhas, telas de banco',
+        'Qualquer atividade com risco à sua segurança',
+      ],
+    };
+  }
+}
+</script>
+</body>
+</html>
